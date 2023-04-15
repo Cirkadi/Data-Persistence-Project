@@ -8,11 +8,12 @@ using UnityEditor;
 
 public class MenuManager : MonoBehaviour
 {
-    public string playerName;
+    private string cosa;
     
-    public void NewNameEnter(string playerName)
+    public void EnteringName(string s)
     {
-
+        cosa = s;
+        Debug.Log(cosa);
     }
     
     void Start()
