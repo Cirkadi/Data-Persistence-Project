@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NameScoreKeeper : MonoBehaviour
+public class PlayerDataHandle : MonoBehaviour
 {
-    public static NameScoreKeeper Instance;
-
-    public string playerName;
+    public static PlayerDataHandle Instance;
+    public string PlayerName;
+    public int Score;
 
     private void Awake()
     {
         if (Instance != null)
         {
             Destroy(gameObject);
-            return;
         }
-
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }

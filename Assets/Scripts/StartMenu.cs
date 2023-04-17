@@ -2,25 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-public class MenuManager : MonoBehaviour
+public class StartMenu : MonoBehaviour
 {
-    private string cosa;
-    
-    public void EnteringName(string s)
-    {
-        cosa = s;
-        Debug.Log(cosa);
-    }
-    
-    void Start()
-    {
-        
-    }
+    [SerializeField] Text PlayerNameInput;
 
+    public void SetPlayerName()
+    {
+        PlayerDataHandle.Instance.PlayerName = PlayerNameInput.text;
+    }
     public void StartGame()
     {
         SceneManager.LoadScene(1);
